@@ -7,7 +7,7 @@ var helpers = require('./helpers');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 const METADATA = {
-  baseUrl: '/',
+  baseUrl: '/nghackday2016-monoceros/',
 };
 
 module.exports = webpackMerge(commonConfig, {
