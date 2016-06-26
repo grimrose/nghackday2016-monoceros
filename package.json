@@ -7,7 +7,7 @@
     "typings": "typings",
     "deploy:local": "rimraf dist && webpack --config config/webpack.github-deploy.js",
     "build:prod": "rimraf dist && webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
-    "deploy": "gh-pages-deploy-sh 'dist/'"
+    "deploy": "gh-pages-deploy-sh ./dist/"
   },
   "license": "MIT",
   "dependencies": {
