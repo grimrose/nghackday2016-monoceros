@@ -1,3 +1,5 @@
+sudo: false
+
 language: node_js
 
 node_js:
@@ -15,10 +17,9 @@ before_script: npm install
 
 script: npm run build:prod
 
-#after_script: npm run ghpages
+after_script: npm run ghpages
 
 env:
   global:
-    - GITHUB_REPO: "grimrose/nghackday2016-monoceros"
     - secure: >-
         Foi9SLg4+HSUFH9kHojCsmiclj0TG5fEEFdHaFKZUpvrBD4S6QzZnsSUsi3tNDUpM7K3OiDjYwqvANFt5qmr3+GNki5Mmhx22CoAT8yEITXQXM9GdFTzXPYHCBCYkQjgMPqXtl+rr6DSfTSIRWufqPSq4dQevg3MTptP1fonG6CaRu2rS57AFLDkI8p8WVKHuL8cEpqlGz7PBnSzqXNLRFoUnf3qEtaTyifhvL1Vd6/U2NEUiG2bkHy59OTwnlu9Uewv79OzvZ1v8tgbzcsK9RRpwtmKDWbIaRpJFLdGjGv30Nkem94CjcTM4SkyYXUnui0aiQpWWJVoGiKgeTYD7FOeMAHnxkQt1xo4zr8ejQISUOvy7Ocvpt42cXAJ7RpJaUtNVFcshHPI5lGt9Pl01h+fLfr47MVl6/VU49JC/f0O6uDjiYDFzMDWJ1vdwiFRst16YElPhE5llKWQ5c4SEnGLJbYk/CYEznqdNxGrjBi3wCcSBY9hlViIhK62gVXBl8qOt0eHgCClt3PeLUOdgMv9ZLk6Q6L3A4qOBLUtRX9CIjNTjaGm8lgQg3e0QcUEbmH3oohYhZgBjlRS7SXIjVEL9DU6yfBpeqcKfm+N9PlyemjEww4OQPVTzTVYFf9OSa+vFZhEX9Fxnzh1YtdD3ID8KsDFb69CXD/1RstPANU=
