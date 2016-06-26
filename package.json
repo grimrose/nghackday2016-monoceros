@@ -7,7 +7,7 @@
     "typings": "typings",
     "deploy:local": "rimraf dist && webpack --config config/webpack.github-deploy.js",
     "build:prod": "rimraf dist && webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
-    "deploy": "gh-pages-deploy-cmd 'dist/**/*'"
+    "deploy": "gh-pages-deploy-sh 'dist/**/*'"
   },
   "license": "MIT",
   "dependencies": {
@@ -33,7 +33,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "gh-pages": "^0.11.0",
-    "gh-pages-deploy-cmd": "^1.0.1",
+    "gh-pages-deploy-sh": "^1.2.11",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.21.0",
     "null-loader": "^0.1.1",
