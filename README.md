@@ -1,5 +1,7 @@
 # [Angular Hack Day 2016 Summer](https://angularjs-jp.doorkeeper.jp/events/46335) リポジトリ
 
+[![Build Status](https://travis-ci.org/grimrose/nghackday2016-monoceros.svg?branch=master)](https://travis-ci.org/grimrose/nghackday2016-monoceros)
+
 これはあなたのチーム用のAngular Hack Day 2016 Summerリポジトリです。スターターキットとして [Angular2 Starter](https://angular.io/docs/ts/latest/quickstart.html)と[Angular2 Webpack Starter](https://github.com/AngularClass/angular2-webpack-starter)をアレンジしたものを既に登録しています。
 
 ### Step 1) リポジトリの取得
@@ -30,3 +32,8 @@ github pagesにデプロイを行ってください。もちろん、これは�
 みんなでgithub pagesを見ながら優勝者を選定します。ですので、ハックのゴールはgithub pagesに登録して無事何かしらアプリケーションが実行されることです。
 
 
+### 備考
+
+webpackを使用した`npm run deploy`だと、デプロイ出来なかったので、下記のURLにデプロイ出来るようにしました
+
+http://grimrose.github.io/nghackday2016-monoceros/
