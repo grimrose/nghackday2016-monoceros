@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
+    "watch": "npm run start -- -w",
     "postinstall": "typings install",
     "typings": "typings",
     "deploy:local": "rimraf dist && webpack --config config/webpack.github-deploy.js",
