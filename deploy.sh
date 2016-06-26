@@ -10,7 +10,7 @@ git config --global user.email "noreply@travis-ci.org"
 git config --global user.name "Travis CI"
 
 # copy
-cp -rf ./dist ${_tmp_dir}
+cp -rf ./dist/ ${_tmp_dir}
 
 # deploy
 cd ${_tmp_dir}
