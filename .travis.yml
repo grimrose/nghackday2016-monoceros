@@ -15,7 +15,7 @@ before_script: npm install
 
 script: npm run build:prod
 
-after_script: npm run ghpages
+#after_script: npm run ghpages
 
 env:
   global:

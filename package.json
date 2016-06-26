@@ -5,9 +5,9 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "postinstall": "typings install",
     "typings": "typings",
-    "deploy": "rimraf dist && webpack --config config/webpack.github-deploy.js",
+    "deploy:local": "rimraf dist && webpack --config config/webpack.github-deploy.js",
     "build:prod": "rimraf dist && webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
-    "ghpages": "gh-pages-deploy-cmd 'dist/**/*'"
+    "deploy": "gh-pages-deploy-cmd 'dist/**/*'"
   },
   "license": "MIT",
   "dependencies": {
