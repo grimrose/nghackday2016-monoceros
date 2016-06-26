@@ -14,8 +14,10 @@ import {Hero, HeroService} from "./hero.service";
                 <label>name: </label>
                 <input [(ngModel)]="hero.name" placeholder="name"/>
             </div>
-            <button (click)="gotoHeroes()">Back</button>
-            <button (click)="save()">Save</button>
+            <div class="detail-buttons">
+                <button (click)="gotoHeroes()">Back</button>
+                <button (click)="save()">Save</button>
+            </div>
         </div>
     `
 })
