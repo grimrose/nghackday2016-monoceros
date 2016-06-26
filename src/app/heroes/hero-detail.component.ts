@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
+import {Component, OnInit, OnDestroy, EventEmitter, Input, Output} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
 import {Hero, HeroService} from "./hero.service";
 
@@ -15,11 +15,16 @@ import {Hero, HeroService} from "./hero.service";
                 <input [(ngModel)]="hero.name" placeholder="name"/>
             </div>
             <button (click)="gotoHeroes()">Back</button>
+            <button (click)="save()">Save</button>
         </div>
     `
 })
 export class HeroDetailComponent implements OnInit, OnDestroy {
-    hero:Hero;
+    @Input() hero:Hero;
+    @Output() close = new EventEmitter();
+
+    error:any;
+    navigated = false;
 
     private sub:any;
 
@@ -31,9 +36,16 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             let id = +params['id'];
-            this.service
-                .getHero(id)
-                .then(hero => this.hero = hero);
+
+            if (id !== 0) {
+                this.navigated = true;
+                this.service
+                    .getHero(id)
+                    .then(hero => this.hero = hero);
+            } else {
+                this.navigated = false;
+                this.hero = new Hero(null, '');
+            }
         });
     }
 
@@ -47,8 +59,15 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this.router.navigate(['/heroes'], {queryParams: {id: heroId}});
     }
 
-    goBack() {
-        window.history.back();
+    save() {
+        this.service
+            .save(this.hero)
+            .then(hero => {
+                this.hero = hero;
+                this.close.emit(hero);
+                this.gotoHeroes();
+            })
+            .catch(error => this.error = error);
     }
 
 }
